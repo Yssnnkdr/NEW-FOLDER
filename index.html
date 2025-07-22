@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #388e3c;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2e7d32;
+    }
+    nav a {
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #1b5e20;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    .btn {
+      background-color: #388e3c;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
+  <p>تنمية الاستثمار الفلاحي وتطوير القطاع بجهة تادلة</p>
+</header>
+
+<nav>
+  <a href="#about">من نحن</a>
+  <a href="#projects">مشاريعنا</a>
+  <a href="#contact">اتصل بنا</a>
+</nav>
+
+<div class="container">
+  <section id="about">
+    <h2>من نحن</h2>
+    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، وذلك من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
+  </section>
+
+  <section id="projects">
+    <h2>مشاريعنا</h2>
+    <ul>
+      <li>توسيع شبكات الري بالتنقيط لتحسين استغلال الموارد المائية</li>
+      <li>تأهيل الأراضي الزراعية وزيادة إنتاجيتها</li>
+      <li>برامج تكوين ودعم الفلاحين لتبني تقنيات حديثة</li>
+      <li>حماية الموارد الطبيعية والمحافظة على البيئة</li>
+    </ul>
+    <button class="btn" onclick="alert('المزيد من المشاريع سيتم إضافتها قريباً!')">عرض المزيد</button>
+  </section>
+
+  <section id="contact">
+    <h2>اتصل بنا</h2>
+    <p>العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
+    <p>الهاتف: 05 23 45 67 89</p>
+    <p>البريد الإلكتروني: info@onaf-tadla.ma</p>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 المكتب الوطني للاستثمار الفلاحي لتادلة. جميع الحقوق محفوظة.
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('href').substring(1);
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
