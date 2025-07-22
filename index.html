@@ -5,63 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
   <style>
+    :root {
+      --main-blue: #1976d2;
+      --light-blue: #2196f3;
+      --hover-blue: #0d47a1;
+      --background: #f4f8fc;
+      --text-color: #333;
+    }
+
     body {
       margin: 0;
-      
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+      background-color: var(--background);
+      color: var(--text-color);
+      line-height: 1.7;
     }
+
     header {
-      background-color: #388e3c;
+      background: linear-gradient(90deg, var(--main-blue), var(--light-blue));
       color: #fff;
-      padding: 1rem;
       text-align: center;
+      padding: 1.5rem;
     }
+
+    header h1 {
+      margin: 0.2rem;
+    }
+
     nav {
+      background-color: var(--main-blue);
       display: flex;
       justify-content: center;
-      background-color: #2e7d32;
     }
+
     nav a {
       color: #fff;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       transition: background 0.3s;
     }
+
     nav a:hover {
-      background-color: #1b5e20;
+      background-color: var(--hover-blue);
     }
+
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
+
     section {
       margin-bottom: 3rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-right: 5px solid var(--main-blue);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+
     h2 {
-      color: #2e7d32;
+      color: var(--main-blue);
       margin-bottom: 1rem;
     }
+
     footer {
-      background-color: #2e7d32;
+      background-color: var(--main-blue);
       color: #fff;
       text-align: center;
       padding: 1rem;
+      margin-top: 2rem;
     }
+
     .btn {
-      background-color: #388e3c;
+      background-color: var(--light-blue);
       color: #fff;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 4px;
       cursor: pointer;
       margin-top: 1rem;
+      font-size: 1rem;
+      transition: background 0.3s;
     }
+
     .btn:hover {
-      background-color: #1b5e20;
+      background-color: var(--hover-blue);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "🔹 ";
     }
   </style>
 </head>
@@ -81,7 +120,7 @@
 <div class="container">
   <section id="about">
     <h2>من نحن</h2>
-    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، وذلك من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
+    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
   </section>
 
   <section id="projects">
@@ -97,9 +136,9 @@
 
   <section id="contact">
     <h2>اتصل بنا</h2>
-    <p>العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
-    <p>الهاتف: 05 23 45 67 89</p>
-    <p>البريد الإلكتروني: info@onaf-tadla.ma</p>
+    <p>📍 العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
+    <p>📞 الهاتف: 05 23 45 67 89</p>
+    <p>📧 البريد الإلكتروني: info@onaf-tadla.ma</p>
   </section>
 </div>
 
