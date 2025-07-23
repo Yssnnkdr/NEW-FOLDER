@@ -1,160 +1,205 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
   <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
   <style>
-    :root {
-      --main-blue: #1976d2;
-      --light-blue: #2196f3;
-      --hover-blue: #0d47a1;
-      --background: #f4f8fc;
-      --text-color: #333;
-    }
-
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--background);
-      color: var(--text-color);
-      line-height: 1.7;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #e8f5e9);
+      color: #222;
+      line-height: 1.8;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
     header {
-      background: linear-gradient(90deg, var(--main-blue), var(--light-blue));
-      color: #fff;
+      background: #2e8b57;
+      color: white;
+      padding: 20px;
       text-align: center;
-      padding: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
     header h1 {
-      margin: 0.2rem;
+      margin-bottom: 10px;
+      font-size: 26px;
     }
-
-    nav {
-      background-color: var(--main-blue);
-      display: flex;
-      justify-content: center;
-    }
-
     nav a {
-      color: #fff;
-      padding: 0.75rem 1.5rem;
+      margin: 0 10px;
+      color: white;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-
     nav a:hover {
-      background-color: var(--hover-blue);
+      color: #ffd700;
     }
-
-    .container {
+    .mode-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1050&q=80') no-repeat center;
+      background-size: cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px black;
+    }
+    section {
+      padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 2rem;
     }
-
-    section {
-      margin-bottom: 3rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-right: 5px solid var(--main-blue);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
     h2 {
-      color: var(--main-blue);
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      background-color: var(--main-blue);
-      color: #fff;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #2e7d32;
     }
-
-    .btn {
-      background-color: var(--light-blue);
-      color: #fff;
-      padding: 0.6rem 1.2rem;
+    .dark-mode h2 {
+      color: #90ee90;
+    }
+    p {
+      text-align: justify;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 30%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #aaa;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
       border: none;
-      border-radius: 4px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #2e8b57;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
       cursor: pointer;
-      margin-top: 1rem;
-      font-size: 1rem;
       transition: background 0.3s;
     }
-
-    .btn:hover {
-      background-color: var(--hover-blue);
+    form button:hover {
+      background: #256d45;
     }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "🔹 ";
+    footer {
+      background: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <button class="mode-btn" onclick="toggleMode()">🌙/☀</button>
+    <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
+    <nav>
+      <a href="#about">من نحن</a>
+      <a href="#gallery">صور</a>
+      <a href="#location">الموقع</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
-  <p>تنمية الاستثمار الفلاحي وتطوير القطاع بجهة تادلة</p>
-</header>
-
-<nav>
-  <a href="#about">من نحن</a>
-  <a href="#projects">مشاريعنا</a>
-  <a href="#contact">اتصل بنا</a>
-</nav>
-
-<div class="container">
-  <section id="about">
-    <h2>من نحن</h2>
-    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
+  <section class="hero">
+    <h2>نحو تنمية فلاحية مستدامة بمنطقة تادلة</h2>
+    <p>نقود مشاريع ري واستثمار لتطوير الفلاحة وضمان الأمن الغذائي.</p>
   </section>
 
-  <section id="projects">
-    <h2>مشاريعنا</h2>
-    <ul>
-      <li>توسيع شبكات الري بالتنقيط لتحسين استغلال الموارد المائية</li>
-      <li>تأهيل الأراضي الزراعية وزيادة إنتاجيتها</li>
-      <li>برامج تكوين ودعم الفلاحين لتبني تقنيات حديثة</li>
-      <li>حماية الموارد الطبيعية والمحافظة على البيئة</li>
-    </ul>
-    <button class="btn" onclick="alert('المزيد من المشاريع سيتم إضافتها قريباً!')">عرض المزيد</button>
+  <section id="about">
+    <h2>من نحن؟</h2>
+    <p>
+      نحن مؤسسة عمومية تهدف إلى تعزيز وتطوير الاستثمارات الفلاحية في منطقة تادلة، خاصة بإقليم الفقيه بن صالح. نعمل على مشاريع الري، دعم الفلاحين، المحافظة على المياه والتربة، وتشجيع الفلاحة العصرية والمستدامة. رؤيتنا تتمثل في تحقيق الأمن الغذائي وتعزيز الاقتصاد المحلي عبر تنمية القطاع الفلاحي.
+    </p>
+  </section>
+
+  <section id="gallery">
+    <h2>معرض الصور</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1609167706335-e1b968f2ea73?auto=format&fit=crop&w=500&q=80" alt="حقل">
+      <img src="https://images.unsplash.com/photo-1613571793095-3edb1b91a3c1?auto=format&fit=crop&w=500&q=80" alt="معدات فلاحية">
+      <img src="https://images.unsplash.com/photo-1602524202375-f94419b14709?auto=format&fit=crop&w=500&q=80" alt="جرار">
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>موقعنا</h2>
+    <iframe src="https://maps.google.com/maps?q=Fkih%20Ben%20Salah&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
   </section>
 
   <section id="contact">
     <h2>اتصل بنا</h2>
-    <p>📍 العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
-    <p>📞 الهاتف: 0615548825</p>
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="email" placeholder="البريد الإلكتروني" required>
+      <textarea placeholder="رسالتك" rows="4" required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
   </section>
-</div>
 
-<footer>
-  &copy; 2025 المكتب الوطني للاستثمار الفلاحي لتادلة. جميع الحقوق محفوظة.
-</footer>
+  <footer>
+    <p>© 2025 المكتب الوطني للاستثمار الفلاحي لتادلة - الفقيه بن صالح</p>
+  </footer>
 
-<script>
-  // Smooth scroll
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('href').substring(1);
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
 
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("✅ تم إرسال رسالتك بنجاح. شكرا لتواصلك معنا!");
+      event.target.reset();
+    }
+  </script>
 </body>
 </html>
