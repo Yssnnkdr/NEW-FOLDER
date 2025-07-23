@@ -1,136 +1,99 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
     body {
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to right, #f9f9f9, #e8f5e9);
-      color: #222;
-      line-height: 1.8;
-      transition: background 0.3s, color 0.3s;
-    }
-    .dark-mode {
-      background: #121212;
-      color: #eee;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      direction: rtl;
     }
     header {
-      background: #2e8b57;
+      background-color: #ff9900;
       color: white;
       padding: 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 26px;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #222;
+      padding: 15px 0;
     }
     nav a {
-      margin: 0 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
     nav a:hover {
-      color: #ffd700;
-    }
-    .mode-btn {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
+      color: #ff9900;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1050&q=80') no-repeat center;
-      background-size: cover;
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 3px black;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 28px;
-      color: #2e7d32;
-    }
-    .dark-mode h2 {
-      color: #90ee90;
-    }
-    p {
-      text-align: justify;
-    }
-    .gallery {
+      background: url('https://images.unsplash.com/photo-1602524202375-f94419b14709?auto=format&fit=crop&w=1050&q=80') center/cover;
+      height: 250px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
       justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      font-size: 28px;
     }
-    .gallery img {
-      width: 30%;
-      border-radius: 10px;
-      box-shadow: 0 0 5px #aaa;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
       transition: transform 0.3s;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .product:hover {
+      transform: scale(1.02);
     }
-    iframe {
+    .product img {
       width: 100%;
-      height: 300px;
-      border-radius: 10px;
-      border: none;
+      height: 160px;
+      object-fit: cover;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 500px;
-      margin: auto;
+    .product h3 {
+      margin: 10px;
+      font-size: 18px;
+      color: #333;
     }
-    form input, form textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .product p {
+      color: green;
+      margin-bottom: 10px;
     }
-    form button {
-      background: #2e8b57;
+    .cta {
+      background: #ff9900;
       color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
+      text-align: center;
+      padding: 30px;
     }
-    form button:hover {
-      background: #256d45;
+    .cta button {
+      background: white;
+      color: #ff9900;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 15px;
     }
     footer {
-      background: #2e8b57;
+      background: #222;
       color: white;
       text-align: center;
       padding: 20px;
@@ -139,67 +102,50 @@
   </style>
 </head>
 <body>
+
   <header>
-    <button class="mode-btn" onclick="toggleMode()">🌙/☀</button>
     <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
-    <nav>
-      <a href="#about">من نحن</a>
-      <a href="#gallery">صور</a>
-      <a href="#location">الموقع</a>
-      <a href="#contact">اتصل بنا</a>
-    </nav>
+    <p>الفقيه بن صالح</p>
   </header>
 
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">الخدمات</a>
+    <a href="#">المشاريع</a>
+    <a href="#">اتصل بنا</a>
+  </nav>
+
   <section class="hero">
-    <h2>نحو تنمية فلاحية مستدامة بمنطقة تادلة</h2>
-    <p>نقود مشاريع ري واستثمار لتطوير الفلاحة وضمان الأمن الغذائي.</p>
+    الاستثمار الفلاحي ركيزة التنمية
   </section>
 
-  <section id="about">
-    <h2>من نحن؟</h2>
-    <p>
-      نحن مؤسسة عمومية تهدف إلى تعزيز وتطوير الاستثمارات الفلاحية في منطقة تادلة، خاصة بإقليم الفقيه بن صالح. نعمل على مشاريع الري، دعم الفلاحين، المحافظة على المياه والتربة، وتشجيع الفلاحة العصرية والمستدامة. رؤيتنا تتمثل في تحقيق الأمن الغذائي وتعزيز الاقتصاد المحلي عبر تنمية القطاع الفلاحي.
-    </p>
-  </section>
-
-  <section id="gallery">
-    <h2>معرض الصور</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1609167706335-e1b968f2ea73?auto=format&fit=crop&w=500&q=80" alt="حقل">
-      <img src="https://images.unsplash.com/photo-1613571793095-3edb1b91a3c1?auto=format&fit=crop&w=500&q=80" alt="معدات فلاحية">
-      <img src="https://images.unsplash.com/photo-1602524202375-f94419b14709?auto=format&fit=crop&w=500&q=80" alt="جرار">
+  <section class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1613571793095-3edb1b91a3c1?auto=format&fit=crop&w=500&q=80" alt="جرار فلاحي">
+      <h3>دعم شراء الجرارات</h3>
+      <p>ابتداءً من 50,000 درهم</p>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80" alt="مشاريع ري">
+      <h3>مشاريع الري بالتنقيط</h3>
+      <p>دعم يصل إلى 80%</p>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1598550890813-0f237ebef9ac?auto=format&fit=crop&w=500&q=80" alt="البذور">
+      <h3>بذور مختارة</h3>
+      <p>بجودة عالية وأسعار مدعمة</p>
     </div>
   </section>
 
-  <section id="location">
-    <h2>موقعنا</h2>
-    <iframe src="https://maps.google.com/maps?q=Fkih%20Ben%20Salah&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-  </section>
-
-  <section id="contact">
-    <h2>اتصل بنا</h2>
-    <form onsubmit="return handleSubmit(event)">
-      <input type="text" placeholder="الاسم الكامل" required>
-      <input type="email" placeholder="البريد الإلكتروني" required>
-      <textarea placeholder="رسالتك" rows="4" required></textarea>
-      <button type="submit">إرسال</button>
-    </form>
+  <section class="cta">
+    <h2>سجل كمستفيد من برامج الدعم الفلاحي</h2>
+    <p>املأ طلبك الإلكتروني عبر بوابتنا الرقمية للاستفادة من الدعم التقني والمادي</p>
+    <button onclick="alert('شكراً لتسجيلك! سنتواصل معك قريباً.')">سجل الآن</button>
   </section>
 
   <footer>
-    <p>© 2025 المكتب الوطني للاستثمار الفلاحي لتادلة - الفقيه بن صالح</p>
+    <p>جميع الحقوق محفوظة © 2025 - المكتب الوطني لتادلة</p>
   </footer>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle("dark-mode");
-    }
-
-    function handleSubmit(event) {
-      event.preventDefault();
-      alert("✅ تم إرسال رسالتك بنجاح. شكرا لتواصلك معنا!");
-      event.target.reset();
-    }
-  </script>
 </body>
 </html>
