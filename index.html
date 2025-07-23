@@ -2,159 +2,164 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
+  <title>المكتب الجهوي للاستثمار الفلاحي لتادلة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    :root {
-      --main-blue: #1976d2;
-      --light-blue: #2196f3;
-      --hover-blue: #0d47a1;
-      --background: #f4f8fc;
-      --text-color: #333;
-    }
-
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--background);
-      color: var(--text-color);
-      line-height: 1.7;
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      direction: rtl;
     }
-
     header {
-      background: linear-gradient(90deg, var(--main-blue), var(--light-blue));
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem;
+      background-color: #ff9900;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
+    header img.logo {
+      height: 50px;
+    }
     header h1 {
-      margin: 0.2rem;
+      font-size: 22px;
     }
-
     nav {
-      background-color: var(--main-blue);
       display: flex;
       justify-content: center;
+      background-color: #222;
+      padding: 12px 0;
+      gap: 20px;
     }
-
     nav a {
-      color: #fff;
-      padding: 0.75rem 1.5rem;
+      color: white;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
     }
-
     nav a:hover {
-      background-color: var(--hover-blue);
+      color: #ff9900;
     }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+    .hero {
+      background: url('building.png') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      font-size: 30px;
     }
-
-    section {
-      margin-bottom: 3rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-right: 5px solid var(--main-blue);
-      padding: 1.5rem;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product {
+      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-      color: var(--main-blue);
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      background-color: var(--main-blue);
-      color: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      overflow: hidden;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      transition: transform 0.3s;
     }
-
-    .btn {
-      background-color: var(--light-blue);
-      color: #fff;
-      padding: 0.6rem 1.2rem;
+    .product:hover {
+      transform: scale(1.02);
+    }
+    .product img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 10px;
+      font-size: 20px;
+      color: #333;
+    }
+    .product p {
+      color: green;
+      margin-bottom: 15px;
+    }
+    .cta {
+      background: #ff9900;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta button {
+      background: white;
+      color: #ff9900;
+      padding: 10px 25px;
       border: none;
-      border-radius: 4px;
+      font-weight: bold;
       cursor: pointer;
-      margin-top: 1rem;
-      font-size: 1rem;
-      transition: background 0.3s;
+      border-radius: 5px;
+      margin-top: 20px;
     }
-
-    .btn:hover {
-      background-color: var(--hover-blue);
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
     }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "🔹 ";
+    .header-image {
+      width: 100%;
+      max-height: 140px;
+      object-fit: contain;
+      margin-top: 10px;
+      margin-bottom: -20px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
-  <p>تنمية الاستثمار الفلاحي وتطوير القطاع بجهة تادلة</p>
-</header>
+  <header>
+    <img src="logo1.png" class="logo" alt="شعار المكتب">
+    <h1>المكتب الجهوي للاستثمار الفلاحي لتادلة</h1>
+  </header>
 
-<nav>
-  <a href="#about">من نحن</a>
-  <a href="#projects">مشاريعنا</a>
-  <a href="#contact">اتصل بنا</a>
-</nav>
+  <img src="header-logo.jpeg" class="header-image" alt="عنوان المكتب الرسمي">
 
-<div class="container">
-  <section id="about">
-    <h2>من نحن</h2>
-    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">الخدمات</a>
+    <a href="#">المشاريع</a>
+    <a href="#">اتصل بنا</a>
+  </nav>
+
+  <section class="hero">
+    الاستثمار الفلاحي ركيزة التنمية
   </section>
 
-  <section id="projects">
-    <h2>مشاريعنا</h2>
-    <ul>
-      <li>توسيع شبكات الري بالتنقيط لتحسين استغلال الموارد المائية</li>
-      <li>تأهيل الأراضي الزراعية وزيادة إنتاجيتها</li>
-      <li>برامج تكوين ودعم الفلاحين لتبني تقنيات حديثة</li>
-      <li>حماية الموارد الطبيعية والمحافظة على البيئة</li>
-    </ul>
-    <button class="btn" onclick="alert('المزيد من المشاريع سيتم إضافتها قريباً!')">عرض المزيد</button>
+  <section class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1613571793095-3edb1b91a3c1?auto=format&fit=crop&w=500&q=80" alt="جرار فلاحي">
+      <h3>دعم شراء الجرارات</h3>
+      <p>ابتداءً من 50,000 درهم</p>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80" alt="مشاريع الري">
+      <h3>مشاريع الري بالتنقيط</h3>
+      <p>دعم يصل إلى 80%</p>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1598550890813-0f237ebef9ac?auto=format&fit=crop&w=500&q=80" alt="بذور">
+      <h3>بذور مختارة</h3>
+      <p>جودة عالية بأسعار مدعمة</p>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>اتصل بنا</h2>
-    <p>📍 العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
-    <p>📞 الهاتف: 0615548825</p>
+  <section class="cta">
+    <h2>سجل كمستفيد من برامج المكتب</h2>
+    <p>املأ استمارتك للاستفادة من الدعم الفلاحي والتقني</p>
+    <button onclick="alert('✅ تم تسجيلك بنجاح!')">سجل الآن</button>
   </section>
-</div>
 
-<footer>
-  &copy; 2025 المكتب الوطني للاستثمار الفلاحي لتادلة. جميع الحقوق محفوظة.
-</footer>
-
-<script>
-  // Smooth scroll
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('href').substring(1);
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+  <footer>
+    <p>جميع الحقوق محفوظة © 2025 - المكتب الجهوي لتادلة</p>
+  </footer>
 
 </body>
 </html>
