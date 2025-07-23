@@ -1,160 +1,235 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <title>المكتب الجهوي للاستثمار الفلاحي لتادلة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المكتب الوطني للاستثمار الفلاحي لتادلة</title>
   <style>
     :root {
-      --main-blue: #1976d2;
-      --light-blue: #2196f3;
-      --hover-blue: #0d47a1;
-      --background: #f4f8fc;
-      --text-color: #333;
+      --main-color: #007bff;
+      --light-bg: #f8f9fa;
+      --box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--background);
-      color: var(--text-color);
-      line-height: 1.7;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--light-bg);
+      direction: rtl;
+    }
+
+    .top-banner {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo {
+      display: block;
+      max-width: 140px;
+      margin: 15px auto 10px;
     }
 
     header {
-      background: linear-gradient(90deg, var(--main-blue), var(--light-blue));
-      color: #fff;
+      background-color: var(--main-color);
+      color: white;
+      padding: 15px;
       text-align: center;
-      padding: 1.5rem;
-    }
-
-    header h1 {
-      margin: 0.2rem;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     nav {
-      background-color: var(--main-blue);
+      background-color: #0056b3;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 10px;
     }
 
     nav a {
-      color: #fff;
-      padding: 0.75rem 1.5rem;
+      color: white;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: var(--hover-blue);
+      text-decoration: underline;
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 10px;
     }
 
-    section {
-      margin-bottom: 3rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-right: 5px solid var(--main-blue);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    .card {
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      border-right: 5px solid var(--main-color);
     }
 
-    h2 {
-      color: var(--main-blue);
-      margin-bottom: 1rem;
+    .card h2 {
+      color: var(--main-color);
+      margin-bottom: 15px;
+      font-size: 22px;
     }
 
-    footer {
-      background-color: var(--main-blue);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+    .card p, .card li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .card ul {
+      padding-right: 20px;
+    }
+
+    .card li::marker {
+      color: var(--main-color);
     }
 
     .btn {
-      background-color: var(--light-blue);
-      color: #fff;
-      padding: 0.6rem 1.2rem;
+      display: inline-block;
+      background-color: var(--main-color);
+      color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
-      margin-top: 1rem;
-      font-size: 1rem;
-      transition: background 0.3s;
+      margin-top: 15px;
+      font-size: 16px;
+      text-align: center;
     }
 
     .btn:hover {
-      background-color: var(--hover-blue);
+      background-color: #0056b3;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+    a.phone {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
     }
 
-    ul li::before {
-      content: "🔹 ";
+    a.phone:hover {
+      text-decoration: underline;
+    }
+
+    .about-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .about-images img {
+      width: 260px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 15px;
+      }
+
+      nav {
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .about-images img {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>المكتب الوطني للاستثمار الفلاحي لتادلة</h1>
-  <p>تنمية الاستثمار الفلاحي وتطوير القطاع بجهة تادلة</p>
-</header>
+  <!-- ✅ صورة كبيرة في الأعلى -->
+  <img src="c:\Users\x\Downloads\pic lo1.jpg" class="top-banner" alt="صورة بانر">
 
-<nav>
-  <a href="#about">من نحن</a>
-  <a href="#projects">مشاريعنا</a>
-  <a href="#contact">اتصل بنا</a>
-</nav>
+  <!-- ✅ شعار المكتب -->
+  <img src="c:\Users\x\Downloads\pic lo 3.jpg" class="logo" alt="شعار المكتب">
 
-<div class="container">
-  <section id="about">
-    <h2>من نحن</h2>
-    <p>المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.</p>
-  </section>
+  <!-- ✅ رأس الموقع -->
+  <header>
+    المكتب الجهوي للاستثمار الفلاحي لتادلة بالفقيه بن صالح
+  </header>
 
-  <section id="projects">
-    <h2>مشاريعنا</h2>
-    <ul>
-      <li>توسيع شبكات الري بالتنقيط لتحسين استغلال الموارد المائية</li>
-      <li>تأهيل الأراضي الزراعية وزيادة إنتاجيتها</li>
-      <li>برامج تكوين ودعم الفلاحين لتبني تقنيات حديثة</li>
-      <li>حماية الموارد الطبيعية والمحافظة على البيئة</li>
-    </ul>
-    <button class="btn" onclick="alert('المزيد من المشاريع سيتم إضافتها قريباً!')">عرض المزيد</button>
-  </section>
+  <!-- ✅ قائمة التنقل -->
+  <nav>
+    <a href="#about">من نحن</a>
+    <a href="#projects">مشاريعنا</a>
+    <a href="#location">الموقع</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
 
-  <section id="contact">
-    <h2>اتصل بنا</h2>
-    <p>📍 العنوان: شارع محمد الخامس، بني ملال، المغرب</p>
-    <p>📞 الهاتف: 0615548825</p>
-  </section>
-</div>
+  <!-- ✅ المحتوى -->
+  <div class="container">
 
-<footer>
-  &copy; 2025 المكتب الوطني للاستثمار الفلاحي لتادلة. جميع الحقوق محفوظة.
-</footer>
+    <!-- من نحن -->
+    <div class="card" id="about">
+      <h2>من نحن</h2>
+      <p>
+        المكتب الوطني للاستثمار الفلاحي لتادلة هو مؤسسة عمومية تهدف إلى تشجيع وتطوير الاستثمارات الفلاحية في منطقة تادلة، من خلال تأهيل الأراضي، دعم الفلاحين، وتطوير تقنيات الري الحديث لضمان تنمية مستدامة للقطاع الفلاحي.
+      </p>
 
-<script>
-  // Smooth scroll
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('href').substring(1);
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+      <!-- ✅ صور تعريفية -->
+      <div class="about-images">
+        <img src="c:\Users\x\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\33D6548E48D4318CEB0E3916A79AFC84\WhatsApp Image 2025-07-22 à 23.06.11_abd3793f.jpg" alt="تعريف 1">
+        <img src="c:\Users\x\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\97885AFD60C10C4A454C11E225763E04\WhatsApp Image 2025-07-22 à 23.06.11_841ee60c.jpg" alt="تعريف 2">
+        <img src="c:\Users\x\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\F571B230F35658C8BD8C6348021E0B53\WhatsApp Image 2025-07-22 à 23.06.11_43c69c9e.jpg" alt="تعريف 3">
+      </div>
+    </div>
+
+    <!-- مشاريعنا -->
+    <div class="card" id="projects">
+      <h2>مشاريعنا</h2>
+      <ul>
+        <li>توسيع شبكات الري بالتنقيط لتحسين استغلال الموارد المائية</li>
+        <li>تأهيل الأراضي الزراعية وزيادة إنتاجيتها</li>
+        <li>برامج تكوين ودعم الفلاحين لتبني تقنيات حديثة</li>
+        <li>حماية الموارد الطبيعية والمحافظة على البيئة</li>
+      </ul>
+      <button class="btn" onclick="alert('📌 يتم إضافة المزيد قريباً!')">عرض المزيد</button>
+    </div>
+
+    <!-- الموقع -->
+    <div class="card" id="location">
+      <h2>موقعنا على الخريطة</h2>
+      <p>يمكنكم زيارتنا في مقر المكتب الجهوي لتادلة بالفقيه بن صالح، :</p>
+      <iframe 
+        src="https://www.google.com/maps?q=33.000917,-6.064423&hl=ar&z=15&output=embed"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- اتصل بنا -->
+    <div class="card" id="contact">
+      <h2>اتصل بنا</h2>
+      <p>📍الفقيه بن صالح جهة بني ملال خنيفرة ، المغرب</p>
+      <p>☎ الهاتف: <a class="phone" href="tel:0615548825">0615548825</a></p>
+    </div>
+
+  </div>
 
 </body>
 </html>
